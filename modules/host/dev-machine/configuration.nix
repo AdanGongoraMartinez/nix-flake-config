@@ -5,6 +5,7 @@
     imports = [
       self.nixosModules.myDevMachineHardware
       self.nixosModules.nvf-conf
+      self.nixosModules.kitty-conf
     ];
 
     nix.settings.experimental-features = [
@@ -101,9 +102,8 @@
       lazygit
       yazi
       fzf
-      kitty
       wl-clipboard
-
+      opencode
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
