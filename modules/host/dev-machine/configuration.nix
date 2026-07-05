@@ -6,7 +6,15 @@
       self.nixosModules.myDevMachineHardware
       self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
+      inputs.home-manager.nixosModules.default
     ];
+
+    home-manager = {
+      extraSpecialArgs = { inherit inputs; };
+      users = {
+        "nix" = import ./_home.nix;
+      };
+    };
 
     nix.settings.experimental-features = [
       "nix-command"
