@@ -9,6 +9,7 @@
       self.nixosModules.tmux-conf
       self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
+      self.nixosModules.zoxide-conf
       self.nixosModules.helix-conf
       self.nixosModules.language-servers
       self.nixosModules.fish-conf
