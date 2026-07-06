@@ -1,12 +1,11 @@
 { self, inputs, ... }: {
-  flake.nixosModules.fish-conf = { pkgs, ... }: {
+  flake.nixosModules.tmux-conf = { pkgs, ... }: {
     home-manager.users.nix = { pkgs, ... }: {
-      programs.fish = {
+      programs.tmux = {
         enable = true;
-
-        interactiveShellInit = ''
-          set fish_greeting # Disable greeting
-        '';
+        shell = "${pkgs.fish}/bin/fish";
+        terminal = "tmux-256color";
+        historyLimit = 100000;
       };
     };
   };
