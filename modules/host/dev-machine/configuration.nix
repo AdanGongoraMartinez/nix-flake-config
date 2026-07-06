@@ -6,6 +6,7 @@
       self.nixosModules.myDevMachineHardware
       self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
+      self.nixosModules.helix-conf
       inputs.home-manager.nixosModules.default
     ];
 
@@ -112,6 +113,7 @@
       fzf
       wl-clipboard
       opencode
+      nil
       nixfmt
       jujutsu
     ];

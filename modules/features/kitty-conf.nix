@@ -3,7 +3,7 @@
     home-manager.users.nix = { pkgs, ... }: {
       programs.kitty = {
         enable = true;
-        themeFile = "Gruvbox Dark";
+        themeFile = "gruvbox-dark";
         settings = {
           confirm_os_window_close = 0;
         };
