@@ -15,6 +15,8 @@
       self.nixosModules.fish-conf
       self.nixosModules.fish-plugins
       self.nixosModules.starship-conf
+      self.nixosModules.lazygit-conf
+      self.nixosModules.yazi-conf
       inputs.home-manager.nixosModules.default
     ];
 
