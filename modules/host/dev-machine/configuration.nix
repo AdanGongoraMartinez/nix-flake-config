@@ -14,6 +14,7 @@
       self.nixosModules.language-servers
       self.nixosModules.fish-conf
       self.nixosModules.fish-plugins
+      self.nixosModules.starship-conf
       inputs.home-manager.nixosModules.default
     ];
 
