@@ -6,6 +6,7 @@
       self.nixosModules.myDevMachineHardware
       self.nixosModules.dev-packages
       self.nixosModules.languages
+      self.nixosModules.tmux-conf
       self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
       self.nixosModules.helix-conf
