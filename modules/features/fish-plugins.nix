@@ -4,6 +4,11 @@
       home.packages = with pkgs; [
         fzf
         grc
+        fishPlugins.grc
+        fishPlugins.fzf-fish
+        fishPlugins.done
+        fishPlugins.forgit
+        fishPlugins.hydro
       ];
     };
   };
