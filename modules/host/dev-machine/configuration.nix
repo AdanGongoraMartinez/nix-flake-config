@@ -112,6 +112,8 @@
       fzf
       wl-clipboard
       opencode
+      nixfmt
+      jujutsu
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
