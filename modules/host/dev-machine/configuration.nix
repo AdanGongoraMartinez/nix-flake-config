@@ -7,7 +7,7 @@
       self.nixosModules.dev-packages
       self.nixosModules.languages
       self.nixosModules.tmux-conf
-      self.nixosModules.nvf-conf
+      # self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
       self.nixosModules.zoxide-conf
       self.nixosModules.helix-conf
@@ -66,6 +66,14 @@
     services.xserver.xkb = {
       layout = "us";
       variant = "";
+    };
+
+    # Enable Flatpak and declarative packages
+    services.flatpak = {
+      enable = true;
+      packages = [
+        "it.mijorus.gearlever"
+      ];
     };
 
     # Enable CUPS to print documents.

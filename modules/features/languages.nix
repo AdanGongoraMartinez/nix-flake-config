@@ -5,6 +5,9 @@
         nodejs
         go
         flutter
+        dotnet-sdk
+        cargo
+        rustc
       ];
     };
   };
