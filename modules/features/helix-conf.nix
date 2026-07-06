@@ -12,9 +12,14 @@
             select = "underline";
           };
 
-          editor.indent-guides.render = true;
-          editor.file-picker.hidden = true;
-          editor.soft-wrap.enable = true;
+          editor = {
+            line-number = "relative";
+            cursorline = true;
+            color-modes = true;
+            indent-guides.render = true;
+            file-picker.hidden = true;
+            soft-wrap.enable = true;
+          };
 
           keys.normal = {
             "D" = "@vgld";
