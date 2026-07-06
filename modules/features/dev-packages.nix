@@ -8,6 +8,7 @@
         yazi
         fastfetch
         wl-clipboard
+        nerd-fonts.hack
         opencode
       ];
     };
