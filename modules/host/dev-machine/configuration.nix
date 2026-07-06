@@ -7,6 +7,8 @@
       self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
       self.nixosModules.helix-conf
+      self.nixosModules.fish-conf
+      self.nixosModules.fish-plugins
       inputs.home-manager.nixosModules.default
     ];
 
