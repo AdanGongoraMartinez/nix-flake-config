@@ -1,10 +1,13 @@
 { self, inputs, ... }: {
-  flake.nixosModules.kitty-conf = { pkgs, lib, ... }: {
-    environment.systemPackages = [ pkgs.kitty ];
-
-    environment.etc."kitty/kitty.conf".text = ''
-      confirm_os_window_close 0
-      theme Gruvbox Dark
-    '';
+  flake.nixosModules.kitty-conf = { pkgs, ... }: {
+    home-manager.users.nix = { pkgs, ... }: {
+      programs.kitty = {
+        enable = true;
+        themeFile = "Gruvbox Dark";
+        settings = {
+          confirm_os_window_close = 0;
+        };
+      };
+    };
   };
 }
