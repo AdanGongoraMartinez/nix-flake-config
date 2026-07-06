@@ -5,6 +5,7 @@
         enable = true;
         themeFile = "gruvbox-dark";
         settings = {
+          shell = "fish";
           confirm_os_window_close = 0;
         };
       };

@@ -4,6 +4,8 @@
     # import any other modules from here
     imports = [
       self.nixosModules.myDevMachineHardware
+      self.nixosModules.dev-packages
+      self.nixosModules.languages
       self.nixosModules.nvf-conf
       self.nixosModules.kitty-conf
       self.nixosModules.helix-conf
@@ -106,19 +108,9 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-      vim
       wget
+      vim
       neovim
-      fastfetch
-      git
-      lazygit
-      yazi
-      fzf
-      wl-clipboard
-      opencode
-      nil
-      nixfmt
-      jujutsu
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
