@@ -1,6 +1,13 @@
-{ self, inputs, ... }: {
-
-  flake.nixosModules.myDevMachineConfiguration = { pkgs, lib, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.myDevMachineConfiguration = {
+    pkgs,
+    lib,
+    ...
+  }: {
     # import any other modules from here
     imports = [
       self.nixosModules.myDevMachineHardware
@@ -10,7 +17,7 @@
     ];
 
     home-manager = {
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = {inherit inputs;};
       users = {
         "nix" = import ./_home.nix;
       };
@@ -136,7 +143,5 @@
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "25.11"; # Did you read the comment?
-
   };
-
 }

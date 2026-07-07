@@ -1,6 +1,14 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.nvf-conf = { pkgs, lib, ... }: {
-    imports = [ inputs.nvf.nixosModules.default ];
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.nvf-conf = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    imports = [inputs.nvf.nixosModules.default];
     programs.nvf = {
       enable = true;
 

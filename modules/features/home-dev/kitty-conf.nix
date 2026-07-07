@@ -1,6 +1,10 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.kitty-conf = { pkgs, ... }: {
-    home-manager.users.nix = { pkgs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.kitty-conf = {pkgs, ...}: {
+    home-manager.users.nix = {pkgs, ...}: {
       programs.kitty = {
         enable = true;
         themeFile = "gruvbox-dark";

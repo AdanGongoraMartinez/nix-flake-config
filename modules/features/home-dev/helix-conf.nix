@@ -1,6 +1,10 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.helix-conf = { pkgs, ... }: {
-    home-manager.users.nix = { pkgs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.helix-conf = {pkgs, ...}: {
+    home-manager.users.nix = {pkgs, ...}: {
       programs.helix = {
         enable = true;
         settings = {
@@ -41,78 +45,78 @@
               name = "nix";
               auto-format = true;
               formatter.command = "${pkgs.alejandra}/bin/alejandra";
-              language-servers = [ "nixd" ];
+              language-servers = ["nixd"];
             }
             {
               name = "rust";
               auto-format = true;
               formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
-              language-servers = [ "rust-analyzer" ];
+              language-servers = ["rust-analyzer"];
             }
             {
               name = "go";
               auto-format = true;
               formatter.command = "${pkgs.gofumpt}/bin/gofumpt";
-              language-servers = [ "gopls" ];
+              language-servers = ["gopls"];
             }
             {
               name = "python";
               auto-format = true;
               formatter = {
                 command = "${pkgs.ruff}/bin/ruff";
-                args = [ "format" ];
+                args = ["format"];
               };
-              language-servers = [ "pyright" ];
+              language-servers = ["pyright"];
             }
             {
               name = "typescript";
               auto-format = true;
               formatter.command = "${pkgs.prettier}/bin/prettier";
-              language-servers = [ "typescript-language-server" ];
+              language-servers = ["typescript-language-server"];
             }
             {
               name = "javascript";
               auto-format = true;
               formatter.command = "${pkgs.prettier}/bin/prettier";
-              language-servers = [ "typescript-language-server" ];
+              language-servers = ["typescript-language-server"];
             }
             {
               name = "json";
               auto-format = true;
               formatter.command = "${pkgs.prettier}/bin/prettier";
-              language-servers = [ "vscode-json-language-server" ];
+              language-servers = ["vscode-json-language-server"];
             }
             {
               name = "html";
               auto-format = true;
               formatter.command = "${pkgs.prettier}/bin/prettier";
-              language-servers = [ "vscode-html-language-server" ];
+              language-servers = ["vscode-html-language-server"];
             }
             {
               name = "css";
               auto-format = true;
               formatter.command = "${pkgs.prettier}/bin/prettier";
-              language-servers = [ "vscode-css-language-server" ];
+              language-servers = ["vscode-css-language-server"];
             }
             {
               name = "toml";
               auto-format = true;
-              language-servers = [ "taplo" ];
+              language-servers = ["taplo"];
             }
             {
               name = "yaml";
               auto-format = true;
-              language-servers = [ "yaml-language-server" ];
+              language-servers = ["yaml-language-server"];
             }
             {
               name = "c-sharp";
               auto-format = true;
-              language-servers = [ "omnisharp" ];
+              language-servers = ["omnisharp"];
             }
             {
               name = "dockerfile";
               auto-format = true;
-              language-servers = [ "dockerfile-language-server" ];
+              language-servers = ["dockerfile-language-server"];
             }
           ];
           language-server = {
@@ -130,33 +134,33 @@
             };
             typescript-language-server = {
               command = "${pkgs.typescript-language-server}/bin/typescript-language-server";
-              args = [ "--stdio" ];
+              args = ["--stdio"];
             };
             vscode-json-language-server = {
               command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
-              args = [ "--stdio" ];
+              args = ["--stdio"];
             };
             vscode-html-language-server = {
               command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
-              args = [ "--stdio" ];
+              args = ["--stdio"];
             };
             vscode-css-language-server = {
               command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
-              args = [ "--stdio" ];
+              args = ["--stdio"];
             };
             taplo = {
               command = "${pkgs.taplo}/bin/taplo";
             };
             yaml-language-server = {
               command = "${pkgs.yaml-language-server}/bin/yaml-language-server";
-              args = [ "--stdio" ];
+              args = ["--stdio"];
             };
             omnisharp = {
               command = "${pkgs.omnisharp-roslyn}/bin/omnisharp";
             };
             dockerfile-language-server = {
               command = "${pkgs.dockerfile-language-server}/bin/dockerfile-language-server";
-              args = [ "--stdio" ];
+              args = ["--stdio"];
             };
           };
         };

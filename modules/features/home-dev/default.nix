@@ -1,5 +1,9 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.home-dev = { ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.home-dev = {...}: {
     imports = [
       self.nixosModules.dev-packages
       self.nixosModules.fish-conf
