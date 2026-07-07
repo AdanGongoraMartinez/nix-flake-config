@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "nix";
@@ -69,6 +71,7 @@
   #
   home.sessionVariables = {
     EDITOR = "hx";
+    CHROME_EXECUTABLE = "${pkgs.chromium}/bin/chromium";
   };
 
   # Let Home Manager install and manage itself.
