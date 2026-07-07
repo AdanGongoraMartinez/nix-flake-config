@@ -3,8 +3,8 @@
     home-manager.users.nix = { pkgs, ... }: {
       home.packages = with pkgs; [
         # Nix
-        nil
-        nixfmt
+        nixd
+        alejandra
 
         # Rust
         rust-analyzer

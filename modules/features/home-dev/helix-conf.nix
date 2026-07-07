@@ -35,13 +35,131 @@
           };
         };
 
-        languages.language = [
-          {
-            name = "nix";
-            auto-format = true;
-            formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
-          }
-        ];
+        languages = {
+          language = [
+            {
+              name = "nix";
+              auto-format = true;
+              formatter.command = "${pkgs.alejandra}/bin/alejandra";
+              language-servers = [ "nixd" ];
+            }
+            {
+              name = "rust";
+              auto-format = true;
+              formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+              language-servers = [ "rust-analyzer" ];
+            }
+            {
+              name = "go";
+              auto-format = true;
+              formatter.command = "${pkgs.gofumpt}/bin/gofumpt";
+              language-servers = [ "gopls" ];
+            }
+            {
+              name = "python";
+              auto-format = true;
+              formatter = {
+                command = "${pkgs.ruff}/bin/ruff";
+                args = [ "format" ];
+              };
+              language-servers = [ "pyright" ];
+            }
+            {
+              name = "typescript";
+              auto-format = true;
+              formatter.command = "${pkgs.prettier}/bin/prettier";
+              language-servers = [ "typescript-language-server" ];
+            }
+            {
+              name = "javascript";
+              auto-format = true;
+              formatter.command = "${pkgs.prettier}/bin/prettier";
+              language-servers = [ "typescript-language-server" ];
+            }
+            {
+              name = "json";
+              auto-format = true;
+              formatter.command = "${pkgs.prettier}/bin/prettier";
+              language-servers = [ "vscode-json-language-server" ];
+            }
+            {
+              name = "html";
+              auto-format = true;
+              formatter.command = "${pkgs.prettier}/bin/prettier";
+              language-servers = [ "vscode-html-language-server" ];
+            }
+            {
+              name = "css";
+              auto-format = true;
+              formatter.command = "${pkgs.prettier}/bin/prettier";
+              language-servers = [ "vscode-css-language-server" ];
+            }
+            {
+              name = "toml";
+              auto-format = true;
+              language-servers = [ "taplo" ];
+            }
+            {
+              name = "yaml";
+              auto-format = true;
+              language-servers = [ "yaml-language-server" ];
+            }
+            {
+              name = "c-sharp";
+              auto-format = true;
+              language-servers = [ "omnisharp" ];
+            }
+            {
+              name = "dockerfile";
+              auto-format = true;
+              language-servers = [ "dockerfile-language-server" ];
+            }
+          ];
+          language-server = {
+            nixd = {
+              command = "${pkgs.nixd}/bin/nixd";
+            };
+            rust-analyzer = {
+              command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+            };
+            gopls = {
+              command = "${pkgs.gopls}/bin/gopls";
+            };
+            pyright = {
+              command = "${pkgs.pyright}/bin/pyright-langserver";
+            };
+            typescript-language-server = {
+              command = "${pkgs.typescript-language-server}/bin/typescript-language-server";
+              args = [ "--stdio" ];
+            };
+            vscode-json-language-server = {
+              command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+              args = [ "--stdio" ];
+            };
+            vscode-html-language-server = {
+              command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
+              args = [ "--stdio" ];
+            };
+            vscode-css-language-server = {
+              command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
+              args = [ "--stdio" ];
+            };
+            taplo = {
+              command = "${pkgs.taplo}/bin/taplo";
+            };
+            yaml-language-server = {
+              command = "${pkgs.yaml-language-server}/bin/yaml-language-server";
+              args = [ "--stdio" ];
+            };
+            omnisharp = {
+              command = "${pkgs.omnisharp-roslyn}/bin/omnisharp";
+            };
+            dockerfile-language-server = {
+              command = "${pkgs.dockerfile-language-server}/bin/dockerfile-language-server";
+              args = [ "--stdio" ];
+            };
+          };
+        };
       };
     };
   };
