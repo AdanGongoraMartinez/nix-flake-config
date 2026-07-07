@@ -1,6 +1,10 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.dev-packages = { pkgs, ... }: {
-    home-manager.users.nix = { pkgs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.dev-packages = {pkgs, ...}: {
+    home-manager.users.nix = {pkgs, ...}: {
       home.packages = with pkgs; [
         git
         jujutsu
@@ -8,6 +12,7 @@
         wl-clipboard
         nerd-fonts.hack
         opencode
+        chromium
       ];
     };
   };
