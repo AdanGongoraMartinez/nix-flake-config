@@ -1,6 +1,8 @@
 { self, inputs, ... }: {
   flake.nixosModules.tmux-conf = { pkgs, ... }: {
     home-manager.users.nix = { pkgs, ... }: {
+      home.packages = with pkgs; [ tmuxifier ];
+
       programs.tmux = {
         enable = true;
         shell = "${pkgs.fish}/bin/fish";
