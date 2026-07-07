@@ -4,19 +4,8 @@
     # import any other modules from here
     imports = [
       self.nixosModules.myDevMachineHardware
-      self.nixosModules.dev-packages
-      self.nixosModules.languages
-      self.nixosModules.tmux-conf
+      self.nixosModules.home-dev
       # self.nixosModules.nvf-conf
-      self.nixosModules.kitty-conf
-      self.nixosModules.zoxide-conf
-      self.nixosModules.helix-conf
-      self.nixosModules.language-servers
-      self.nixosModules.fish-conf
-      self.nixosModules.fish-plugins
-      self.nixosModules.starship-conf
-      self.nixosModules.lazygit-conf
-      self.nixosModules.yazi-conf
       inputs.home-manager.nixosModules.default
     ];
 
