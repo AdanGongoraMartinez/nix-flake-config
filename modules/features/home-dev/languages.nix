@@ -12,6 +12,7 @@
         dotnet-sdk
         cargo
         rustc
+        python3
       ];
     };
   };
