@@ -14,6 +14,7 @@
       self.nixosModules.tui
       self.nixosModules.terminal-emulators
       self.nixosModules.browsers
+      self.nixosModules.window-manager
 
       # self.nixosModules.nvf
       inputs.home-manager.nixosModules.default
