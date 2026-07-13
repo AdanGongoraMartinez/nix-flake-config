@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.lazygit-conf = {pkgs, ...}: {
+  flake.nixosModules.lazygit = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.lazygit = {
         enable = true;

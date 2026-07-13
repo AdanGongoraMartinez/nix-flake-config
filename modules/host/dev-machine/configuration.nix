@@ -15,7 +15,7 @@
       self.nixosModules.terminal-emulators
       self.nixosModules.browsers
 
-      # self.nixosModules.nvf-conf
+      # self.nixosModules.nvf
       inputs.home-manager.nixosModules.default
     ];
 

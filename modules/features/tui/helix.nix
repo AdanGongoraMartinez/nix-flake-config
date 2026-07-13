@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.helix-conf = {pkgs, ...}: {
+  flake.nixosModules.helix = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.helix = {
         enable = true;

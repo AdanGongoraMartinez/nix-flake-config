@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.starship-conf = {pkgs, ...}: {
+  flake.nixosModules.starship = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.starship = {
         enable = true;

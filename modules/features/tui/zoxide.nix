@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.zoxide-conf = {pkgs, ...}: {
+  flake.nixosModules.zoxide = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.zoxide = {
         enable = true;

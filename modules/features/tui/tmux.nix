@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.tmux-conf = {pkgs, ...}: {
+  flake.nixosModules.tmux = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       home.packages = with pkgs; [tmuxifier];
 

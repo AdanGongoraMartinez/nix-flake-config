@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.kitty-conf = {pkgs, ...}: {
+  flake.nixosModules.kitty = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.kitty = {
         enable = true;

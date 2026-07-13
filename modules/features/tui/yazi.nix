@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.yazi-conf = {pkgs, ...}: {
+  flake.nixosModules.yazi = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.yazi = {
         enable = true;

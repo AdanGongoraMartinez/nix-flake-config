@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.nvf-conf = {
+  flake.nixosModules.nvf = {
     pkgs,
     lib,
     ...

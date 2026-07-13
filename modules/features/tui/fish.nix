@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.fish-conf = {pkgs, ...}: {
+  flake.nixosModules.fish = {pkgs, ...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.fish = {
         enable = true;
