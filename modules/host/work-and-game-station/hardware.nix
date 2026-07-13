@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.myDevMachineHardware = {
+  flake.nixosModules.work-and-game-station-hardware = {
     config,
     lib,
     pkgs,

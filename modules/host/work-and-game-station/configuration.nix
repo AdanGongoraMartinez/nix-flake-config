@@ -3,14 +3,14 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.myDevMachineConfiguration = {
+  flake.nixosModules.work-and-game-station = {
     pkgs,
     lib,
     ...
   }: {
     # import any other modules from here
     imports = [
-      self.nixosModules.myDevMachineHardware
+      self.nixosModules.work-and-game-station-hardware
       self.nixosModules.tui
       self.nixosModules.terminal-emulators
       self.nixosModules.browsers
@@ -116,7 +116,6 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       wget
-      vim
       neovim
     ];
 
