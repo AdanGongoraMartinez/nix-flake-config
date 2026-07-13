@@ -11,7 +11,7 @@
     # import any other modules from here
     imports = [
       self.nixosModules.myDevMachineHardware
-      self.nixosModules.home-dev
+      self.nixosModules.tui
       # self.nixosModules.nvf-conf
       inputs.home-manager.nixosModules.default
     ];

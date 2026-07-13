@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.home-dev = {...}: {
+  flake.nixosModules.tui = {...}: {
     imports = [
       self.nixosModules.dev-packages
       self.nixosModules.fish-conf
