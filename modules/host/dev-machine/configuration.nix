@@ -13,6 +13,7 @@
       self.nixosModules.myDevMachineHardware
       self.nixosModules.tui
       self.nixosModules.terminal-emulators
+      self.nixosModules.browsers
 
       # self.nixosModules.nvf-conf
       inputs.home-manager.nixosModules.default
