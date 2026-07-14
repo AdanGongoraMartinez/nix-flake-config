@@ -14,6 +14,7 @@
         opencode
         openfortivpn
         gh
+        btop
       ];
     };
   };
