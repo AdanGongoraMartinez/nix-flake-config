@@ -15,6 +15,7 @@
         openfortivpn
         gh
         btop
+        cmatrix
       ];
     };
   };
