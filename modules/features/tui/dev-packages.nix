@@ -13,6 +13,7 @@
         nerd-fonts.hack
         opencode
         openfortivpn
+        gh
       ];
     };
   };
