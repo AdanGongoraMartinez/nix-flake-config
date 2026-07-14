@@ -15,6 +15,7 @@
       self.nixosModules.terminal-emulators
       self.nixosModules.browsers
       self.nixosModules.window-manager
+      self.nixosModules.work-utils
       self.nixosModules.gaming
 
       # self.nixosModules.nvf
