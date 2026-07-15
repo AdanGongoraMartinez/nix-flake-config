@@ -72,6 +72,7 @@
   home.sessionVariables = {
     EDITOR = "hx";
     CHROME_EXECUTABLE = "${pkgs.chromium}/bin/chromium";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
   # Let Home Manager install and manage itself.
