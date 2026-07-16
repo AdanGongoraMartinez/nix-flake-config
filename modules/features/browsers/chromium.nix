@@ -20,12 +20,11 @@
       #     }
       #   ];
       # };
-
-      home-manager.users.nix = {pkgs, ...}: {
-        home.packages = with pkgs; [
-          chromium
-        ];
-      };     
      };
+     home-manager.users.nix = {pkgs, ...}: {
+      home.packages = with pkgs; [
+        chromium
+      ];
+    };
   };
 }
