@@ -15,6 +15,11 @@
             insert = "bar";
             select = "underline";
           };
+          
+          editor.inline-diagnostics = {
+            cursor-line = "hint";
+            other-lines = "warning";
+          };
 
           editor = {
             line-number = "relative";
@@ -35,6 +40,13 @@
             "C-u" = [
               "half_page_up"
               "align_view_center"
+            ];
+            "C-y" = [
+              ':sh rm -f /tmp/unique-file'
+              ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file'
+              ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty'
+              ':open %sh{cat /tmp/unique-file}'
+              ':redraw'
             ];
           };
         };
