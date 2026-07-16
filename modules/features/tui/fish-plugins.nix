@@ -12,7 +12,6 @@
         fishPlugins.fzf-fish
         fishPlugins.done
         fishPlugins.forgit
-        fishPlugins.hydro
       ];
     };
   };
