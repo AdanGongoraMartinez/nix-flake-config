@@ -41,6 +41,9 @@
         # Docker
         dockerfile-language-server
         hadolint
+
+        # Markdown
+        marksman
       ];
     };
   };

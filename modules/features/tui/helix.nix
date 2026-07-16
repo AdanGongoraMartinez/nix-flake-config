@@ -118,6 +118,15 @@
               auto-format = true;
               language-servers = ["dockerfile-language-server"];
             }
+            {
+              name = "markdown";
+              auto-format = true;
+              formatter = {
+                command = "${pkgs.prettier}/bin/prettier";
+                args = ["--parser" "markdown"];
+              };
+              language-servers = ["marksman"];
+            }
           ];
           language-server = {
             nixd = {
@@ -161,6 +170,9 @@
             dockerfile-language-server = {
               command = "${pkgs.dockerfile-language-server}/bin/dockerfile-language-server";
               args = ["--stdio"];
+            };
+            marksman = {
+              command = "${pkgs.marksman}/bin/marksman";
             };
           };
         };
