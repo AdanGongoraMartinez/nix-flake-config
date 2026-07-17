@@ -17,6 +17,7 @@
       self.nixosModules.window-manager
       self.nixosModules.work-utils
       self.nixosModules.gaming
+      self.nixosModules.flatpak
 
       # self.nixosModules.nvf
       inputs.home-manager.nixosModules.default
