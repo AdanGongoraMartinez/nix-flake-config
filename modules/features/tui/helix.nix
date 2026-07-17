@@ -131,6 +131,20 @@
               language-servers = ["dockerfile-language-server"];
             }
             {
+              name = "bash";
+              auto-format = true;
+              language-servers = ["bash-language-server"];
+            }
+            {
+              name = "awk";
+              auto-format = true;
+              formatter = {
+                command = "${pkgs.gawk}/bin/awk";
+                timeout = 5;
+                args = ["--file=/dev/stdin" "--pretty-print=/dev/stdout"];
+              };
+            }
+            {
               name = "markdown";
               auto-format = true;
               formatter = {
@@ -182,6 +196,10 @@
             dockerfile-language-server = {
               command = "${pkgs.dockerfile-language-server}/bin/dockerfile-language-server";
               args = ["--stdio"];
+            };
+            bash-language-server = {
+              command = "${pkgs.bash-language-server}/bin/bash-language-server";
+              args = ["start"];
             };
             marksman = {
               command = "${pkgs.marksman}/bin/marksman";

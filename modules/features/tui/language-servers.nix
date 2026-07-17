@@ -44,6 +44,9 @@
 
         # Markdown
         marksman
+
+        # Bash
+        bash-language-server
       ];
     };
   };
