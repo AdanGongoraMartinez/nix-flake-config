@@ -9,6 +9,7 @@
       self.nixosModules.proton
       self.nixosModules.steam
       self.nixosModules.sunshine
-     ];
+      self.nixosModules.other-nix
+    ];
   };
 }
