@@ -8,8 +8,6 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     # nvf.url = "github:notashelf/nvf";
     
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
