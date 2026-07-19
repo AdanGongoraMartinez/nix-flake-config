@@ -8,7 +8,6 @@
       home.packages = with pkgs; [
         gnome-disk-utility
         gnome-connections
-        rustdesk
         gcolor3
       ];
     };
