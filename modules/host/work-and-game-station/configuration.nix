@@ -11,6 +11,8 @@
     # import any other modules from here
     imports = [
       self.nixosModules.work-and-game-station-hardware
+      self.nixosModules.cleaning
+
       self.nixosModules.tui
       self.nixosModules.terminal-emulators
       self.nixosModules.browsers
