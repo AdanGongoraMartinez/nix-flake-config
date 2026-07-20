@@ -8,31 +8,31 @@
       gruvbox-plus-icons
     ];
 
-    home-manager.users.nix = {pkgs, ...}: {
-      gtk = {
-        enable = true;
-        iconTheme = {
-          package = pkgs.gruvbox-plus-icons;
-          name = "Gruvbox-Plus-Dark";
-        };
-      };
+    # home-manager.users.nix = {pkgs, ...}: {
+    #   gtk = {
+    #     enable = true;
+    #     iconTheme = {
+    #       package = pkgs.gruvbox-plus-icons;
+    #       name = "Gruvbox-Plus-Dark";
+    #     };
+    #   };
 
-      qt = {
-        enable = true;
-        platformTheme = "kde";
-        style = {
-          name = "breeze";
-          package = pkgs.kdePackages.breeze;
-        };
-      };
+    #   qt = {
+    #     enable = true;
+    #     platformTheme.name = "kde";
+    #     style = {
+    #       name = "breeze";
+    #       package = pkgs.kdePackages.breeze;
+    #     };
+    #   };
 
-      home.file.".config/kdeglobals".text = ''
-        [General]
-        ColorScheme=BreezeDark
+    #   home.file.".config/kdeglobals".text = ''
+    #     [General]
+    #     ColorScheme=BreezeDark
 
-        [Icons]
-        Theme=Gruvbox-Plus-Dark
-      '';
-    };
+    #     [Icons]
+    #     Theme=Gruvbox-Plus-Dark
+    #   '';
+    # };
   };
 }
