@@ -17,6 +17,7 @@
       self.nixosModules.tmux
       self.nixosModules.yazi
       self.nixosModules.zoxide
+      self.nixosModules.docker
     ];
   };
 }
