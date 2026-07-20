@@ -10,6 +10,8 @@
 
         yt-dlp
         video-downloader
+
+        haruna
       ];
     };
   };
