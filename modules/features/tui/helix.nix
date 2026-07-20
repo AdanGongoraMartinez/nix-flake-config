@@ -33,6 +33,7 @@
           keys.normal = {
             "D" = "@vgld";
             "C-q" = ":bc";
+            "C-s" = ":w";
             "C-d" = [
               "half_page_down"
               "align_view_center"
