@@ -1,10 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.fish = {pkgs, ...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.fish = {...}: {
+    home-manager.users.nix = {...}: {
       programs.fish = {
         enable = true;
 

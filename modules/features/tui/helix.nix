@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.helix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.helix = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.helix = {
         enable = true;

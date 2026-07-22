@@ -1,14 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.sunshine = {
-    pkgs,
-    lib,
-    ...
-  }: {
-
+{...}: {
+  flake.nixosModules.sunshine = {...}: {
     services.sunshine = {
       enable = true;
       autoStart = false;  # inicio manual

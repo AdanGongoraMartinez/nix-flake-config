@@ -1,9 +1,5 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
-  flake.nixosModules.docker = {self, inputs, ...}: {
+{...}: {
+  flake.nixosModules.docker = {...}: {
     virtualisation.docker.enable = true;
 
     users.users.nix.extraGroups = [ "docker" ];

@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.chromium = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.chromium = {...}: {
     programs.chromium = {
       enable = true;
       extensions = [

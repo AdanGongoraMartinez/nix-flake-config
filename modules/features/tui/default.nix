@@ -1,8 +1,4 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{self, ...}: {
   flake.nixosModules.tui = {...}: {
     imports = [
       self.nixosModules.dev-packages

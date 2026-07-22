@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.obs = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.obs = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.obs-studio = {
         enable = true;

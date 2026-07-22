@@ -1,12 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{ ... }: {
   flake.nixosModules.work-and-game-station-hardware = {
-    config,
     lib,
-    pkgs,
     modulesPath,
     ...
   }: {

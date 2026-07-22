@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.proton = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.proton = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       home.packages = with pkgs; [
         mangohud

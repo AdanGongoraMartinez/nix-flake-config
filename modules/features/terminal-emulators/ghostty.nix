@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.ghostty = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.ghostty = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       programs.ghostty = {
         enable = true;

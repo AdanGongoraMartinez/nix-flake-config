@@ -1,10 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.zoxide = {pkgs, ...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.zoxide = {...}: {
+    home-manager.users.nix = {...}: {
       programs.zoxide = {
         enable = true;
 

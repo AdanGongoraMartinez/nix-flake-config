@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.dev-packages = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.dev-packages = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       home.packages = with pkgs; [
         git

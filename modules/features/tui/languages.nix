@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.languages = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.languages = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       home.packages = with pkgs; [
         nodejs

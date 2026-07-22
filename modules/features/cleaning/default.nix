@@ -1,14 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.cleaning = {
-    pkgs,
-    lib,
-    ...
-  }: {
-
+{...}: {
+  flake.nixosModules.cleaning = {...}: {
       nix.gc = {
         automatic = true;
         dates = "weekly";

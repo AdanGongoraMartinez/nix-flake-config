@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.fish-plugins = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.fish-plugins = {...}: {
     home-manager.users.nix = {pkgs, ...}: {
       home.packages = with pkgs; [
         fzf

@@ -1,10 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.lazygit = {pkgs, ...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.lazygit = {...}: {
+    home-manager.users.nix = {...}: {
       programs.lazygit = {
         enable = true;
         settings = {

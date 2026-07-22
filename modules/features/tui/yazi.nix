@@ -1,10 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.yazi = {pkgs, ...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.yazi = {...}: {
+    home-manager.users.nix = {...}: {
       programs.yazi = {
         enable = true;
 

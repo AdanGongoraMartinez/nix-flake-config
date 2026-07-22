@@ -1,10 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.tmux = {pkgs, ...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.tmux = {...}: {
+    home-manager.users.nix = {...}: {
       home.packages = with pkgs; [tmuxifier];
 
       programs.tmux = {

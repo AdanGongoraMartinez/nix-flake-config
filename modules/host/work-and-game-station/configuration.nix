@@ -3,11 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.work-and-game-station = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.work-and-game-station = { pkgs, ... }: {
     # import any other modules from here
     imports = [
       self.nixosModules.work-and-game-station-hardware

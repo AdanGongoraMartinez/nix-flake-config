@@ -1,14 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.steam = {
-    pkgs,
-    lib,
-    ...
-  }: {
-
+{...}: {
+  flake.nixosModules.steam = {...}: {
     hardware.graphics = {
       enable = true;
       enable32Bit = true;

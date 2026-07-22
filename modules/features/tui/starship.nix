@@ -1,10 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.starship = {pkgs, ...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.starship = {...}: {
+    home-manager.users.nix = {...}: {
       programs.starship = {
         enable = true;
         enableFishIntegration = true;
