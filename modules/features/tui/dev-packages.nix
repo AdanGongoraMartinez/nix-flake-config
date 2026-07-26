@@ -12,6 +12,7 @@
         gh
         btop
         cmatrix
+        nh
       ];
     };
   };

@@ -14,6 +14,7 @@
       self.nixosModules.yazi
       self.nixosModules.zoxide
       self.nixosModules.docker
+      self.nixosModules.nh
     ];
   };
 }
