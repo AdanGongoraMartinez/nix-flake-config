@@ -5,6 +5,7 @@
         mangohud
         protonup-ng
         protonup-qt
+        protonplus
       ];
     };
   };
