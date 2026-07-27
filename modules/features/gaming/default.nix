@@ -9,6 +9,7 @@
       self.nixosModules.steam
       self.nixosModules.sunshine
       self.nixosModules.other-nix
+      self.nixosModules.kernel
     ];
   };
 }
