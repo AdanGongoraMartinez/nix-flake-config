@@ -9,6 +9,20 @@
   perSystem = { pkgs, lib, self', ... }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
+      # libdisplay 0.3 needed
+      package = pkgs.niri.override {
+        libdisplay-info = libdisplay-info.overrideAttrs (finalAttrs: {
+          version = "0.3.0";
+          src = fetchFromGitLab {
+            domain = "gitlab.freedesktop.org";
+            owner = "emersion";
+            repo = "libdisplay-info";
+            rev = finalAttrs.version;
+            sha256 = "sha256-nXf2KGovNKvcchlHlzKBkAOeySMJXgxMpbi5z9gLrdc=";
+          };
+        });
+      };
+
       settings = {
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
