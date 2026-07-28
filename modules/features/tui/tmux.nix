@@ -18,8 +18,12 @@
         ];
 
         extraConfig = ''
+          # Copy Mode (vi)
           set -g status-position top
           set -g mode-keys vi
+          bind-key -T copy-mode-vi v send-keys -X begin-selection
+          bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
           bind v copy-mode
           bind -n M-Left  select-pane -L
           bind -n M-Right select-pane -R
