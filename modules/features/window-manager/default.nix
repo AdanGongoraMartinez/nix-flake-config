@@ -4,6 +4,7 @@
       self.nixosModules.niri
       self.nixosModules.icons
       self.nixosModules.sddm
+      self.nixosModules.plymouth
     ];
   };
 }
