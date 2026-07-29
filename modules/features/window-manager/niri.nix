@@ -11,9 +11,9 @@
       inherit pkgs;
       # libdisplay 0.3 needed
       package = pkgs.niri.override {
-        libdisplay-info = libdisplay-info.overrideAttrs (finalAttrs: {
+        libdisplay-info = pkgs.libdisplay-info.overrideAttrs (finalAttrs: {
           version = "0.3.0";
-          src = fetchFromGitLab {
+          src = pkgs.fetchFromGitLab {
             domain = "gitlab.freedesktop.org";
             owner = "emersion";
             repo = "libdisplay-info";
