@@ -13,8 +13,8 @@
           };
           
           editor.inline-diagnostics = {
-            cursor-line = "hint";
-            other-lines = "warning";
+            cursor-line = "warning";
+            other-lines = "disable";
           };
 
           editor = {
@@ -24,6 +24,7 @@
             indent-guides.render = true;
             file-picker.hidden = true;
             soft-wrap.enable = true;
+            end-of-line-diagnostics = "hint";
           };
 
           keys.normal = {
@@ -75,7 +76,7 @@
                 command = "${pkgs.ruff}/bin/ruff";
                 args = ["format"];
               };
-              language-servers = ["pyright"];
+              language-servers = ["ty"];
             }
             {
               name = "typescript";
@@ -161,8 +162,9 @@
             gopls = {
               command = "${pkgs.gopls}/bin/gopls";
             };
-            pyright = {
-              command = "${pkgs.pyright}/bin/pyright-langserver";
+            ty = {
+              command = "${pkgs.ty}/bin/ty";
+              args = ["server"];
             };
             typescript-language-server = {
               command = "${pkgs.typescript-language-server}/bin/typescript-language-server";

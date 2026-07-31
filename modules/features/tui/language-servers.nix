@@ -28,7 +28,7 @@
         yaml-language-server
 
         # Python
-        pyright
+        ty
         ruff
 
         # JSON / HTML / CSS (bundled)
