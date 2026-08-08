@@ -4,10 +4,13 @@
   ...
 }: {
   flake.nixosModules.vm = { pkgs, ... }: {
+    hostUser = "vm-nix";
+
     # import any other modules from here
     imports = [
       self.nixosModules.vm-hardware
       self.nixosModules.cleaning
+      self.nixosModules.user-options
 
       self.nixosModules.tui
       self.nixosModules.terminal-emulators
@@ -19,7 +22,7 @@
     home-manager = {
       extraSpecialArgs = {inherit inputs;};
       users = {
-        "nix" = import ./_home.nix;
+        "vm-nix" = import ./_home.nix;
       };
     };
 
@@ -57,9 +60,9 @@
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.nix = {
+    users.users.vm-nix = {
       isNormalUser = true;
-      description = "nix";
+      description = "vm-nix";
       extraGroups = [
         "networkmanager"
         "wheel"

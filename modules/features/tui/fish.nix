@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.fish = {...}: {
-    home-manager.users.nix = {...}: {
+  flake.nixosModules.fish = {config, ...}: {
+    home-manager.users.${config.hostUser} = {...}: {
       programs.fish = {
         enable = true;
 

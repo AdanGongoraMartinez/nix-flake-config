@@ -4,10 +4,13 @@
   ...
 }: {
   flake.nixosModules.work-and-game-station = { pkgs, ... }: {
+    hostUser = "main-nix";
+
     # import any other modules from here
     imports = [
       self.nixosModules.work-and-game-station-hardware
       self.nixosModules.cleaning
+      self.nixosModules.user-options
 
       self.nixosModules.tui
       self.nixosModules.terminal-emulators
@@ -23,7 +26,7 @@
     home-manager = {
       extraSpecialArgs = {inherit inputs;};
       users = {
-        "nix" = import ./_home.nix;
+        "main-nix" = import ./_home.nix;
       };
     };
 
@@ -101,9 +104,9 @@
     # services.xserver.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.nix = {
+    users.users.main-nix = {
       isNormalUser = true;
-      description = "nix";
+      description = "main-nix";
       extraGroups = [
         "networkmanager"
         "wheel"

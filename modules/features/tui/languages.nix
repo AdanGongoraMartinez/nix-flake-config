@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.languages = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.languages = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         nodejs
         go

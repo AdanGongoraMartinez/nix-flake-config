@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.zoxide = {...}: {
-    home-manager.users.nix = {...}: {
+  flake.nixosModules.zoxide = {config, ...}: {
+    home-manager.users.${config.hostUser} = {...}: {
       programs.zoxide = {
         enable = true;
 

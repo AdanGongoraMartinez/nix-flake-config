@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.yazi = {...}: {
-    home-manager.users.nix = {...}: {
+  flake.nixosModules.yazi = {config, ...}: {
+    home-manager.users.${config.hostUser} = {...}: {
       programs.yazi = {
         enable = true;
 

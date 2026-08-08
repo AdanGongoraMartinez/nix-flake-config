@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.obs = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.obs = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       programs.obs-studio = {
         enable = true;
 

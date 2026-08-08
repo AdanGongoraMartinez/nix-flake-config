@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.language-servers = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.language-servers = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         # Nix
         nixd

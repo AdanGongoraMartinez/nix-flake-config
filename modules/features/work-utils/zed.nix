@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.zed = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.zed = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       programs.zed-editor = {
         enable = true;
         extensions = [ "nix" "toml" "rust" ];

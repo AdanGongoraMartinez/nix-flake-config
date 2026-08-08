@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.proton = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.proton = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         mangohud
         protonup-ng

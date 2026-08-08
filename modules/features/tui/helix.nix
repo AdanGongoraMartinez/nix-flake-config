@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.helix = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.helix = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       programs.helix = {
         enable = true;
         settings = {

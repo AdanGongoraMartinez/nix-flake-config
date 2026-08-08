@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.other-nix = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.other-nix = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         audacity
 

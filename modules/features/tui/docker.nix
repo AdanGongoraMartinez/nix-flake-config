@@ -1,15 +1,15 @@
 {...}: {
-  flake.nixosModules.docker = {...}: {
+  flake.nixosModules.docker = {config, ...}: {
     virtualisation.docker.enable = true;
 
-    users.users.nix.extraGroups = [ "docker" ];
+    users.users.${config.hostUser}.extraGroups = [ "docker" ];
 
     virtualisation.docker.rootless = {
       enable = true;
       setSocketVariable = true;
     };
 
-    home-manager.users.nix = {pkgs, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         docker-compose
       ];

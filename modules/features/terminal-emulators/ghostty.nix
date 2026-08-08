@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.ghostty = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.ghostty = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       programs.ghostty = {
         enable = true;
         package = pkgs.ghostty; # Linux binary

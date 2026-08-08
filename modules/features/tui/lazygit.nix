@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.lazygit = {...}: {
-    home-manager.users.nix = {...}: {
+  flake.nixosModules.lazygit = {config, ...}: {
+    home-manager.users.${config.hostUser} = {...}: {
       programs.lazygit = {
         enable = true;
         settings = {

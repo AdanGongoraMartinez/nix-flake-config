@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.fish-plugins = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.fish-plugins = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         fzf
         grc

@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.chromium = {...}: {
+  flake.nixosModules.chromium = {config, ...}: {
     programs.chromium = {
       enable = true;
       extensions = [
@@ -17,7 +17,7 @@
       #   ];
       # };
      };
-     home-manager.users.nix = {pkgs, ...}: {
+     home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         chromium
       ];

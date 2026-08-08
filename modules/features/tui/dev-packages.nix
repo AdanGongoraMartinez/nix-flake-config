@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.dev-packages = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.dev-packages = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       home.packages = with pkgs; [
         git
         jujutsu

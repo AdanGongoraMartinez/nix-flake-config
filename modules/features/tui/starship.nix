@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.starship = {...}: {
-    home-manager.users.nix = {...}: {
+  flake.nixosModules.starship = {config, ...}: {
+    home-manager.users.${config.hostUser} = {...}: {
       programs.starship = {
         enable = true;
         enableFishIntegration = true;

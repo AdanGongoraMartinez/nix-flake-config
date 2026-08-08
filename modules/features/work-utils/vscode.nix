@@ -1,6 +1,6 @@
 {...}: {
-  flake.nixosModules.vscode = {...}: {
-    home-manager.users.nix = {pkgs, ...}: {
+  flake.nixosModules.vscode = {config, ...}: {
+    home-manager.users.${config.hostUser} = {pkgs, ...}: {
       programs.vscode = {
         enable = true;
         profiles.default.extensions = with pkgs.vscode-extensions; [
