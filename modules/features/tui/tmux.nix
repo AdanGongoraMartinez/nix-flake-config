@@ -18,6 +18,10 @@
         ];
 
         extraConfig = ''
+          # extended keys
+          set -g extended-keys on
+          set -g extended-keys-format csi-u
+
           # Copy Mode (vi)
           set -g status-position top
           set -g mode-keys vi
