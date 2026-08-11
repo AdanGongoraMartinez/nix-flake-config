@@ -1,23 +1,3 @@
-{...}: {
-  flake.nixosModules.zed = {config, ...}: {
-    home-manager.users.${config.hostUser} = {pkgs, ...}: {
-      programs.zed-editor = {
-        enable = true;
-        extensions = [ "nix" "toml" "rust" ];
-        userSettings = {
-          theme = {
-            mode = "system";
-            dark = "Gruvbox Dark";
-            light = "Gruvbox Light";
-          };
-          hour_format = "hour24";
-          # vim_mode = true;
-        };
-      };
-
-      home.packages = with pkgs; [
-        zed-editor
-      ];
-    };
-  };
+{config, ...}: {
+  home-manager.users.${config.hostUser} = import ../../../home/zed.nix;
 }
