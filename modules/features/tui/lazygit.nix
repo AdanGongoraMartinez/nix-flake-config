@@ -1,3 +1,5 @@
-{config, ...}: {
-  home-manager.users.${config.hostUser} = import ../../../home/lazygit.nix;
+{...}: {
+  flake.nixosModules.lazygit = {config, ...}: {
+    home-manager.users.${config.hostUser} = import ../../../home/lazygit.nix;
+  };
 }

@@ -1,3 +1,5 @@
-{config, ...}: {
-  home-manager.users.${config.hostUser} = import ../../../home/starship.nix;
+{...}: {
+  flake.nixosModules.starship = {config, ...}: {
+    home-manager.users.${config.hostUser} = import ../../../home/starship.nix;
+  };
 }

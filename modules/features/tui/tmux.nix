@@ -1,3 +1,5 @@
-{config, ...}: {
-  home-manager.users.${config.hostUser} = import ../../../home/tmux.nix;
+{...}: {
+  flake.nixosModules.tmux = {config, ...}: {
+    home-manager.users.${config.hostUser} = import ../../../home/tmux.nix;
+  };
 }
