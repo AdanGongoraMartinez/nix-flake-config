@@ -5,11 +5,6 @@
   # Este archivo NO se usa en NixOS (ahí los hosts usan su propio _home.nix
   # junto con los módulos nixos de features, que importan los mismos archivos
   # de esta carpeta). Aquí montamos la config completa de usuario.
-  #
-  # HOME-MANAGER STANDALONE en Fedora:
-  #   nix run .#homeConfigurations.mainnix.activationPackage
-  #   # o, con home-manager instalado:
-  #   home-manager switch --flake .#mainnix
   # ---------------------------------------------------------------------------
   imports = [
     ./base.nix
