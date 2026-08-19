@@ -7,6 +7,7 @@
   # de esta carpeta). Aquí montamos la config completa de usuario.
   # ---------------------------------------------------------------------------
   imports = [
+    ./themes.nix
     ./base.nix
 
     # TUI / shell / editor
@@ -30,17 +31,18 @@
     ./ghostty.nix
 
     # Navegador
-    ./chromium.nix
+    # ./chromium.nix
 
     # Utilidades de trabajo
-    ./utils.nix
-    # ./vscode.nix
+    # ./utils.nix
+    # ./vscode.nix # use only on nixos
     # ./zed.nix
 
     # Gaming (solo la parte home)
-    ./proton.nix
-    ./obs.nix
-    ./other-gaming.nix
+    # ./proton.nix # use flatpak
+    # ./obs.nix
+    # ./other-gaming.nix
+    # use steam blender
   ];
 
   # ⬇️ AJUSTA a tu usuario real en Fedora (quien ejecuta home-manager)

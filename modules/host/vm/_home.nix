@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [ ../../../home/themes.nix ];
+
+  myTheme.name = "gruvbox";
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "vmnix";

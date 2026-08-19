@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, lib, ... }: {
   home.packages = with pkgs; [tmuxifier];
 
   programs.tmux = {
@@ -8,10 +8,10 @@
     historyLimit = 100000;
     mouse = true;
 
-    plugins = with pkgs; [
+    plugins = lib.optionals (config.myTheme.tmux.plugin != null) [
       {
-        plugin = tmuxPlugins.gruvbox;
-        extraConfig = "set -g @tmux-gruvbox 'dark256'";
+        plugin = config.myTheme.tmux.plugin;
+        extraConfig = config.myTheme.tmux.pluginExtraConfig;
       }
     ];
 
@@ -35,6 +35,6 @@
       bind -n M-p     previous-window
       bind '\'        split-window -h
       bind -          split-window -v
-    '';
+    '' + config.myTheme.tmux.extraConfig;
   };
 }

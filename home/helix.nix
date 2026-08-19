@@ -1,8 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   programs.helix = {
     enable = true;
     settings = {
-      theme = "gruvbox";
+      theme = {
+        gruvbox = "gruvbox";
+        catppuccin = "catppuccin_mocha";
+        tokyo-night = "tokyonight";
+      }.${config.myTheme.name};
 
       editor.cursor-shape = {
         normal = "block";

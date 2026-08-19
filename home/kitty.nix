@@ -1,7 +1,11 @@
-{ ... }: {
+{ config, ... }: {
   programs.kitty = {
     enable = true;
-    themeFile = "gruvbox-dark";
+    themeFile = {
+      gruvbox = "gruvbox-dark";
+      catppuccin = "catppuccin-mocha";
+      tokyo-night = "tokyo-night";
+    }.${config.myTheme.name};
     font = {
       name = "Hack Nerd Font";
       size = 12;
