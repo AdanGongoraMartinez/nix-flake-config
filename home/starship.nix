@@ -12,7 +12,6 @@
         catppuccin = "catppuccin_mocha";
         tokyo-night = "tokyo_night";
       }.${config.myTheme.name};
-      };
 
       os = {
         disabled = false;

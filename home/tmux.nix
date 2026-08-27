@@ -1,4 +1,24 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, config, lib, ... }:
+
+let
+  themeCfg = {
+    gruvbox = {
+      plugin = pkgs.tmuxPlugins.gruvbox;
+      pluginExtraConfig = "set -g @tmux-gruvbox 'dark256'";
+      extraConfig = "";
+    };
+    catppuccin = {
+      plugin = pkgs.tmuxPlugins.catppuccin;
+      pluginExtraConfig = "";
+      extraConfig = "";
+    };
+    tokyo-night = {
+      plugin = pkgs.tmuxPlugins.tokyo-night-tmux;
+      pluginExtraConfig = "";
+      extraConfig = "";
+    };
+ }.${config.myTheme.name};
+in {
   home.packages = with pkgs; [tmuxifier];
 
   programs.tmux = {
@@ -8,10 +28,10 @@
     historyLimit = 100000;
     mouse = true;
 
-    plugins = lib.optionals (config.myTheme.tmux.plugin != null) [
+    plugins = lib.optionals (themeCfg.plugin != null) [
       {
-        plugin = config.myTheme.tmux.plugin;
-        extraConfig = config.myTheme.tmux.pluginExtraConfig;
+        plugin = themeCfg.plugin;
+        extraConfig = themeCfg.pluginExtraConfig;
       }
     ];
 
@@ -35,6 +55,6 @@
       bind -n M-p     previous-window
       bind '\'        split-window -h
       bind -          split-window -v
-    '' + config.myTheme.tmux.extraConfig;
+    '' + themeCfg.extraConfig;
   };
 }
